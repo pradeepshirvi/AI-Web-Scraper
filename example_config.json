@@ -1,0 +1,34 @@
+{
+  "name": "News Article Scraper",
+  "description": "Example configuration for scraping news articles",
+  "url": "https://news-website.com",
+  "config": {
+    "use_selenium": true,
+    "headless": true,
+    "keywords": [
+      "technology",
+      "artificial intelligence",
+      "machine learning",
+      "innovation"
+    ],
+    "relevance_threshold": 0.3,
+    "max_pages": 10,
+    "crawl": true,
+    "follow_pagination": true,
+    "timeout": 15,
+    "delay": 2.0,
+    "wait_for": "article.loaded",
+    "selectors": {
+      "container": "article.post, div.article-item",
+      "title": "h1.article-title, h2.post-title",
+      "content": "div.article-content, div.post-body",
+      "author": "span.author-name",
+      "date": "time.publish-date, span.date",
+      "category": "span.category, a.category-link"
+    }
+  },
+  "export": {
+    "format": "json",
+    "filename": "news_articles.json"
+  }
+}
